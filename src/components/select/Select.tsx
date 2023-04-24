@@ -14,9 +14,14 @@ const Select: React.FC<SelectProps> = ({ options, onChange, className }) => {
     <select
       onChange={onChange}
       className={`border rounded px-4 py-2 focus:outline-none focus:border-blue-500 ${className}`}
+      style={{ maxWidth: "100%" }}
     >
       {options.map((option) => (
-        <option key={option.id} value={option.name}>
+        <option
+          key={option.id}
+          value={option.name}
+          className="max-w-full truncate"
+        >
           {option.name}
         </option>
       ))}

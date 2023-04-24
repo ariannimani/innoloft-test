@@ -1,4 +1,3 @@
-import React from "react";
 import { IoRibbonOutline } from "react-icons/io5";
 
 const PatentCard = () => {

@@ -15,8 +15,8 @@ import { useSelector } from "react-redux";
 import { selectProducts } from "redux/slices/productSlice";
 
 export const ALLOWED_KEYS = [
-  "businessModels",
   "trl",
+  "businessModels",
   "categories",
   "investmentEffort",
   "type",
@@ -42,14 +42,18 @@ const Product = () => {
   };
 
   return (
-    <div>
-      <div className="flex justify-between">
+    <div className="p-4 w-full md:p-0 md:max-w-4xl md:mx-auto">
+      <div className="flex justify-between items-center">
         <Path />
-        <Button type="button" onClick={onClickHandler}>
+        <Button
+          type="button"
+          onClick={onClickHandler}
+          className="bg-indigo-900 text-white hover:bg-indigo-700 md:ml-4"
+        >
           Edit
         </Button>
       </div>
-      <div className="flex justify-between border-solid border-2 border-gray-200 rounded-md w-full bg-white">
+      <div className="flex flex-col md:flex-row justify-between border-solid border-2 border-gray-200 rounded-md bg-white mt-4">
         <ProductCard
           id={product.id}
           image={product.picture}
@@ -67,10 +71,10 @@ const Product = () => {
         />
       </div>
       <VideoCard>
-        <ReactPlayer url={product.video} className="m-auto" />
+        <ReactPlayer url={product.video} width="100%" />
       </VideoCard>
       <ProductDetails>
-        <div className="grid grid-cols-2 gap-4 whitespace-nowrap mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {elements.map((element) => (
             <InfoCard
               key={element.name}

@@ -7,7 +7,7 @@ import Image from "../../assets/Profil-Picture.png";
 
 const Sidebar = () => {
   return (
-    <div className="mt-8 mr-4">
+    <div className="mt-8 mr-4 hidden md:block">
       <UserInfo image={Image} name={"Arian Nimani"} company={"Innoloft GmbH"} />
       <div>
         <ul className="mt-10 cursor-pointer">

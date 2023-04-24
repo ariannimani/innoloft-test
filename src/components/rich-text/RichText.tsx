@@ -4,7 +4,7 @@ import "react-quill/dist/quill.snow.css";
 
 interface RichTextProps {
   defaultValue: string;
-  setValue: any;
+  setValue: (name: string, value: string) => void;
   name: string;
 }
 

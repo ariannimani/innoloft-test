@@ -2,7 +2,7 @@ type Product = {
   [key: string]: any;
 };
 
-type MyElement = {
+export type MyElement = {
   name: string;
   items: any[];
   input: string;
@@ -24,6 +24,8 @@ export const processProductDetails = (
       let inputType = "text"; // default input type is text
       if (key === "trl") {
         inputType = "select"; // set input type to select for key "trl"
+      } else if (key === "businessModels" || key === "categories") {
+        inputType = "category";
       }
 
       if (Array.isArray(product[key])) {

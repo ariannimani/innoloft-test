@@ -20,16 +20,16 @@ const ProductUserDetails: FC<ProductUserDetailsProps> = ({
   address,
 }) => {
   return (
-    <div className="border-l p-10 w-4/12">
+    <div className="border-l p-5 md:p-10 md:w-4/12">
       <span className="font-bold">Offered By</span>
       <img
         src={companyLogo}
         alt={companyName}
-        className="fill-white object-scale-down w-auto h-8 mt-6"
+        className="fill-white object-scale-down w-auto h-8 mt-4 md:mt-6"
       />
       <UserInfo image={profileImage} name={name} company={companyName} />
 
-      <span className="flex gap-1 mt-6">
+      <span className="flex gap-1 mt-4 md:mt-6">
         <IoLocationOutline />
         {address}
       </span>

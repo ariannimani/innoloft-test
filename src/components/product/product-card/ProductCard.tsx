@@ -28,12 +28,14 @@ const ProductCard: FC<ProductCardProps> = ({
   };
 
   return (
-    <div className="w-8/12">
-      <div className="flex justify-between">
+    <div className="w-full md:w-8/12 relative">
+      <div className="absolute top-0 left-0">
         <PatentCard />
+      </div>
+      <div className="absolute top-0 right-0">
         {edit && <DeleteCard onDelete={onDeleteClickHandler} />}
       </div>
-      <div className="w-full h-80">
+      <div className="w-full">
         <img
           src={image}
           alt={title}

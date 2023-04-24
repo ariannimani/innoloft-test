@@ -25,6 +25,11 @@ const Main = () => {
 
   const { products } = useAppSelector(selectProducts);
 
+  let numCols = 3;
+  if (products.length <= 2) {
+    numCols = 2;
+  }
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -34,7 +39,9 @@ const Main = () => {
   }
 
   return (
-    <div className="w-full grid grid-cols-3 gap-6 p-6 ">
+    <div
+      className={`w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${numCols} gap-6 p-6`}
+    >
       {products.length > 0 &&
         products.map((product) => (
           <Link to={"/product"} state={{ id: product.id }} key={product.id}>

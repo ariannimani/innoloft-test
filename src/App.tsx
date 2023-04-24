@@ -25,11 +25,11 @@ const App = () => {
   if (error) return <>Error</>;
 
   return (
-    <div className="w-full min-h-full object-top	bg-gray-50 ">
+    <div className="w-full min-h-full object-top">
       <Header data={data} />
-      <div className=" flex place-content-center">
-        <div className="flex justify-between gap-8 w-5/6	h-screen p-20">
-          <Sidebar />
+      <div className="flex flex-col md:flex-row md:place-content-center">
+        <Sidebar />
+        <div className="w-full md:w-3/4 p-8">
           <RouterProvider router={router} />
         </div>
       </div>

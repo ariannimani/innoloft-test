@@ -28,10 +28,10 @@ const Header: FC<HeaderProps> = ({ data }) => {
       <Input
         type="text"
         placeholder="Search Here..."
-        className="w-96 "
+        className="w-96 hidden md:block"
         name="search"
       />
-      <div className="flex gap-3 items-center">
+      <div className="hidden md:flex gap-3 items-center">
         {data?.hasUserSection && (
           <>
             <AiOutlineMessage />
