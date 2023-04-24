@@ -1,14 +1,13 @@
-import React, { FC } from "react";
-import ReactPlayer from "react-player";
+import React, { FC, ReactNode } from "react";
 
 interface VideoCardProps {
-  video: string;
+  children: ReactNode;
 }
-const VideoCard: FC<VideoCardProps> = ({ video }) => {
+const VideoCard: FC<VideoCardProps> = ({ children }) => {
   return (
     <div className="border-solid border-2 border-gray-200 rounded-md w-full bg-white mt-6 p-6">
       <h1 className="font-bold">Video</h1>
-      <ReactPlayer url={video} className="m-auto" />
+      {children}
     </div>
   );
 };

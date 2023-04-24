@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 interface UserInfoProps {
   image: string;
@@ -17,8 +17,8 @@ const UserInfo: FC<UserInfoProps> = ({ image, name, company }) => {
         className="rounded-full"
       />
       <div>
-        <h6 className="font-bold">{name}</h6>
-        <h6>{company}</h6>
+        <h6 className="font-bold whitespace-nowrap">{name}</h6>
+        <h6 className="whitespace-nowrap">{company}</h6>
       </div>
     </div>
   );

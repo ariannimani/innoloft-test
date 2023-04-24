@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { IoLocationOutline } from "react-icons/io5";
-import Map from "../../map/Map";
-import UserInfo from "../../user/user-info/UserInfo";
+
+import { UserInfo } from "components/user";
+import { Map } from "components";
 
 interface ProductUserDetailsProps {
   companyName: string;

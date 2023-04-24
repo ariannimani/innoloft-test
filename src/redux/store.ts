@@ -3,7 +3,7 @@ import { productReducer } from "./slices";
 
 export const store = configureStore({
   reducer: {
-    counter: productReducer,
+    product: productReducer,
   },
 });
 
