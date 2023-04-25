@@ -31,6 +31,7 @@ const Map: FC<MapProps> = ({ coordinates }) => {
     googleMapsApiKey: GOOGLE_API_KEY ? GOOGLE_API_KEY : "",
   });
 
+  // eslint-disable-next-line
   const [map, setMap] = useState<google.maps.Map | null>(null);
 
   const onLoad = useCallback(function callback(map: google.maps.Map) {

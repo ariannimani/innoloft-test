@@ -10,9 +10,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: FC<InputProps> = forwardRef<HTMLInputElement, InputProps>(
-  ({ type, placeholder, className, register, name, ...rest }) => {
+  ({ type, placeholder, className, register, name, ...rest }, ref) => {
     return (
       <input
+        ref={ref}
         type={type}
         placeholder={placeholder}
         className={`rounded-md pl-2 border-solid border-2 border-gray-200 bg-white ${className}`}

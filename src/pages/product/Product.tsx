@@ -65,7 +65,7 @@ const Product = () => {
           title={product.name}
         >
           <h2 className="font-bold">{product.name} </h2>
-          <p className="mt-4">{parse(product.description)}</p>
+          <div className="mt-4">{parse(product.description)}</div>
         </ProductCard>
         <ProductUserDetails
           companyName={product.company.name}
@@ -77,7 +77,17 @@ const Product = () => {
         />
       </div>
       <VideoCard>
-        <ReactPlayer url={product.video} width="100%" />
+        <ReactPlayer
+          url={product.video}
+          width="100%"
+          config={{
+            youtube: {
+              playerVars: {
+                origin: process.env.REACT_APP_PLAYER_ORIGIN,
+              },
+            },
+          }}
+        />
       </VideoCard>
       <ProductDetails>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
