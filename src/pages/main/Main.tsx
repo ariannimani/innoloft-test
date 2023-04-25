@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { selectProducts, setProducts } from "redux/slices/productSlice";
-import { Card } from "components";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "redux/hooks";
 import { useFetch } from "hooks/useFetch";
+import { useAppSelector } from "redux/hooks";
+
 import { Product } from "redux/slices/types";
+import { selectProducts, setProducts } from "redux/slices/productSlice";
+
+import { Card } from "components";
 
 interface ProductDataProps {
   isLoading: boolean;

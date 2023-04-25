@@ -1,15 +1,20 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 
 import { UserInfo } from "components/user";
 import { Map } from "components";
 
+export interface CoordinatesProps {
+  lat: string;
+  lng: string;
+}
 interface ProductUserDetailsProps {
   companyName: string;
   companyLogo: string;
   name: string;
   profileImage: string;
   address: string;
+  coordinates?: CoordinatesProps | undefined;
 }
 
 const ProductUserDetails: FC<ProductUserDetailsProps> = ({
@@ -18,6 +23,7 @@ const ProductUserDetails: FC<ProductUserDetailsProps> = ({
   name,
   profileImage,
   address,
+  coordinates,
 }) => {
   return (
     <div className="border-l p-5 md:p-10 md:w-4/12">
@@ -33,7 +39,7 @@ const ProductUserDetails: FC<ProductUserDetailsProps> = ({
         <IoLocationOutline />
         {address}
       </span>
-      <Map />
+      {coordinates && <Map coordinates={coordinates} />}
     </div>
   );
 };

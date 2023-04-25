@@ -1,5 +1,6 @@
+import { ChangeEvent, FC } from "react";
+
 import { TrlProps } from "components/product/product-details/components/edit-info/EditInfo";
-import React, { ChangeEvent } from "react";
 
 interface SelectProps {
   options: TrlProps[] | null;
@@ -7,7 +8,7 @@ interface SelectProps {
   className?: string;
 }
 
-const Select: React.FC<SelectProps> = ({ options, onChange, className }) => {
+const Select: FC<SelectProps> = ({ options, onChange, className }) => {
   if (!options) return <></>;
 
   return (

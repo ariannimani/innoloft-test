@@ -1,10 +1,10 @@
-import InputCustom from "components/input-custom/InputCustom";
-import Input from "components/input/Input";
-import Select from "components/select/Select";
-import { useFetch } from "hooks/useFetch";
 import { FC } from "react";
+import { useFetch } from "hooks/useFetch";
+
 import { convertToCamelCase } from "utils";
 import { MyElement } from "utils/processProductDetails";
+
+import { Input, Select, InputCustom } from "components";
 
 export interface TrlProps {
   id: number;

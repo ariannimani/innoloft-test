@@ -1,7 +1,9 @@
 import { FC, useState, KeyboardEvent } from "react";
+
+import { convertToCamelCase } from "utils";
+
 import Button from "components/button/Button";
 import Input from "components/input/Input";
-import { convertToCamelCase } from "utils";
 import { TrlProps } from "components/product/product-details/components/edit-info/EditInfo";
 
 interface InputCustomProps {

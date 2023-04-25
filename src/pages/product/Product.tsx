@@ -1,6 +1,10 @@
 import parse from "html-react-parser";
 import ReactPlayer from "react-player";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { selectProducts } from "redux/slices/productSlice";
+import { processProductDetails } from "utils";
 
 import {
   ProductDetails,
@@ -10,9 +14,6 @@ import {
 } from "components/product";
 import { Button, Path, VideoCard } from "components";
 import { InfoCard } from "components/product/product-details/components";
-import { processProductDetails } from "utils";
-import { useSelector } from "react-redux";
-import { selectProducts } from "redux/slices/productSlice";
 
 export const ALLOWED_KEYS = [
   "trl",
@@ -36,6 +37,10 @@ const Product = () => {
   const userFullName = `${product.user.firstName} ${product.user.lastName}`;
   const address = `${product.company.address.street}, ${product.company.address.city.name} ${product.company.address.zipCode}, ${product.company.address.country.name}`;
   const elements = processProductDetails(product, ALLOWED_KEYS);
+  const coordinates = {
+    lat: product.company.address.latitude,
+    lng: product.company.address.longitude,
+  };
 
   const onClickHandler = () => {
     navigate("/product/edit", { state: product });
@@ -68,6 +73,7 @@ const Product = () => {
           name={userFullName}
           profileImage={product.user.profilePicture}
           address={address}
+          coordinates={coordinates}
         />
       </div>
       <VideoCard>

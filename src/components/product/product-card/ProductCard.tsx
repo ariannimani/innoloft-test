@@ -1,9 +1,10 @@
 import { FC, ReactNode } from "react";
-import { PatentCard, DeleteCard } from "components/product";
 import { useDispatch } from "react-redux";
-import { deleteProduct } from "redux/slices/productSlice";
 import { useNavigate } from "react-router-dom";
 
+import { deleteProduct } from "redux/slices/productSlice";
+
+import { PatentCard, DeleteCard } from "components/product";
 interface ProductCardProps {
   id: number;
   image: string;
