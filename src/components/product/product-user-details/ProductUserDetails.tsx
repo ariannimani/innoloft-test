@@ -3,11 +3,8 @@ import { IoLocationOutline } from "react-icons/io5";
 
 import { UserInfo } from "components/user";
 import { Map } from "components";
+import { CoordinatesProps } from "global";
 
-export interface CoordinatesProps {
-  lat: string;
-  lng: string;
-}
 interface ProductUserDetailsProps {
   companyName: string;
   companyLogo: string;

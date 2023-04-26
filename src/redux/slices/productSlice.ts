@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
-import { Product } from "./types";
+import { Product } from "global";
 
 // declaring the types for our state
 export type ProductState = {

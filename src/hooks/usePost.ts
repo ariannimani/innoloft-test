@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { Product } from "redux/slices/types";
+import { Product } from "global";
 
 type Data = Product;
 type Error = any;

@@ -4,7 +4,7 @@ import { convertToCamelCase } from "utils";
 
 import Button from "components/button/Button";
 import Input from "components/input/Input";
-import { TrlProps } from "components/product/product-details/components/edit-info/EditInfo";
+import { TrlProps } from "global";
 
 interface InputCustomProps {
   placeholder: string;

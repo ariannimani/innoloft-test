@@ -1,6 +1,5 @@
 import { ChangeEvent, FC } from "react";
-
-import { TrlProps } from "components/product/product-details/components/edit-info/EditInfo";
+import { TrlProps } from "global";
 
 interface SelectProps {
   options: TrlProps[] | null;

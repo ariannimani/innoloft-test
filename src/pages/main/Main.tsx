@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { useFetch } from "hooks/useFetch";
 import { useAppSelector } from "redux/hooks";
 
-import { Product } from "redux/slices/types";
 import { selectProducts, setProducts } from "redux/slices/productSlice";
 
 import { Card } from "components";
+import { Product } from "global";
 
 interface ProductDataProps {
   isLoading: boolean;

@@ -1,7 +1,6 @@
 import React, { FC, useState, useCallback } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-
-import { CoordinatesProps } from "components/product/product-user-details/ProductUserDetails";
+import { CoordinatesProps } from "global";
 
 const containerStyle = {
   width: "100%",

@@ -1,3 +1,20 @@
+export interface TrlProps {
+  id: number;
+  name: string;
+  description: string;
+}
+
+export interface TrlData {
+  isLoading: boolean;
+  error: Error | null;
+  data: TrlProps[] | null;
+}
+
+export interface CoordinatesProps {
+  lat: string;
+  lng: string;
+}
+
 export interface Product {
   id: number;
   name: string;

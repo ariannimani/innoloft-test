@@ -5,18 +5,7 @@ import { convertToCamelCase } from "utils";
 import { MyElement } from "utils/processProductDetails";
 
 import { Input, Select, InputCustom } from "components";
-
-export interface TrlProps {
-  id: number;
-  name: string;
-  description: string;
-}
-
-interface TrlData {
-  isLoading: boolean;
-  error: Error | null;
-  data: TrlProps[] | null;
-}
+import { TrlData, TrlProps } from "global";
 
 interface EditInfoProps {
   elements: MyElement[];
