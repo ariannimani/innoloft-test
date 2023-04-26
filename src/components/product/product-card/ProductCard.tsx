@@ -5,23 +5,18 @@ import { useNavigate } from "react-router-dom";
 import { deleteProduct } from "redux/slices/productSlice";
 
 import { PatentCard, DeleteCard } from "components/product";
+import useProduct from "hooks/useProduct";
 interface ProductCardProps {
-  id: number;
-  image: string;
-  title: string;
   edit?: boolean;
   children: ReactNode;
 }
 
-const ProductCard: FC<ProductCardProps> = ({
-  id,
-  image,
-  title,
-  children,
-  edit = false,
-}) => {
+const ProductCard: FC<ProductCardProps> = ({ children, edit = false }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {
+    product: { id, picture, name },
+  } = useProduct();
 
   const onDeleteClickHandler = () => {
     dispatch(deleteProduct(id));
@@ -38,8 +33,8 @@ const ProductCard: FC<ProductCardProps> = ({
       </div>
       <div className="w-full">
         <img
-          src={image}
-          alt={title}
+          src={picture}
+          alt={name}
           className="rounded-tl-md w-full h-full object-cover"
         />
       </div>

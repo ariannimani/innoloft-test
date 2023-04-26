@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { useFetch } from "hooks/useFetch";
+import { useFetch } from "hooks";
 import { useAppSelector } from "redux/hooks";
 
 import { selectProducts, setProducts } from "redux/slices/productSlice";

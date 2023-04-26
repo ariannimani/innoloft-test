@@ -25,4 +25,4 @@ const usePost = <T extends Data>(url: string) => {
   return { error, isPosting, putData };
 };
 
-export { usePost };
+export default usePost;

@@ -1,9 +1,8 @@
 import parse from "html-react-parser";
 import ReactPlayer from "react-player";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import { selectProducts } from "redux/slices/productSlice";
+import { useProduct } from "hooks";
 import { processProductDetails } from "utils";
 
 import {
@@ -25,22 +24,13 @@ export const ALLOWED_KEYS = [
 
 const Product = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const productId = location.state.id;
-  const { products } = useSelector(selectProducts);
-  const product = products.find((product) => product.id === productId);
+  const { product } = useProduct();
 
   if (!product) {
     return <NoProduct />;
   }
 
-  const userFullName = `${product.user.firstName} ${product.user.lastName}`;
-  const address = `${product.company.address.street}, ${product.company.address.city.name} ${product.company.address.zipCode}, ${product.company.address.country.name}`;
   const elements = processProductDetails(product, ALLOWED_KEYS);
-  const coordinates = {
-    lat: product.company.address.latitude,
-    lng: product.company.address.longitude,
-  };
 
   const onClickHandler = () => {
     navigate("/product/edit", { state: product });
@@ -59,22 +49,11 @@ const Product = () => {
         </Button>
       </div>
       <div className="flex flex-col md:flex-row justify-between border-solid border-2 border-gray-200 rounded-md bg-white mt-4">
-        <ProductCard
-          id={product.id}
-          image={product.picture}
-          title={product.name}
-        >
+        <ProductCard>
           <h2 className="font-bold">{product.name} </h2>
           <div className="mt-4">{parse(product.description)}</div>
         </ProductCard>
-        <ProductUserDetails
-          companyName={product.company.name}
-          companyLogo={product.company.logo}
-          name={userFullName}
-          profileImage={product.user.profilePicture}
-          address={address}
-          coordinates={coordinates}
-        />
+        <ProductUserDetails />
       </div>
       <VideoCard>
         <ReactPlayer

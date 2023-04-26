@@ -3,7 +3,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { TiTick } from "react-icons/ti";
 
-import { usePost } from "hooks/usePost";
+import { usePost } from "hooks";
 import { processProductDetails } from "utils";
 
 import { editProduct } from "redux/slices/productSlice";
@@ -29,8 +29,6 @@ const EditProduct = () => {
   );
   const product = location.state;
 
-  const userFullName = `${product.user.firstName} ${product.user.lastName}`;
-  const address = `${product.company.address.street}, ${product.company.address.city.name} ${product.company.address.zipCode}, ${product.company.address.country.name}`;
   const elements = processProductDetails(product, ALLOWED_KEYS);
 
   const onCancelClickHandler = () => {
@@ -75,12 +73,7 @@ const EditProduct = () => {
           onKeyDown={(e) => checkKeyDown(e)}
         >
           <div className="flex flex-col md:flex-row justify-between border-solid border-2 border-gray-200 rounded-md bg-white mt-4">
-            <ProductCard
-              id={product.id}
-              image={product.picture}
-              title={product.name}
-              edit={true}
-            >
+            <ProductCard edit={true}>
               <Input
                 type="text"
                 placeholder="Add title..."
@@ -111,13 +104,7 @@ const EditProduct = () => {
                 </Button>
               </div>
             </ProductCard>
-            <ProductUserDetails
-              companyName={product.company.name}
-              companyLogo={product.company.logo}
-              name={userFullName}
-              profileImage={product.user.profilePicture}
-              address={address}
-            />
+            <ProductUserDetails />
           </div>
           <VideoCard>
             <Input

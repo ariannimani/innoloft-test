@@ -42,4 +42,14 @@ export const { setProducts, deleteProduct, editProduct } = productSlice.actions;
 
 export const selectProducts = (state: RootState) => state.product;
 
+export const selectProductById =
+  (id: number) =>
+  (state: RootState): Product => {
+    const product = state.product.products.find((prod) => prod.id === id);
+    if (!product) {
+      throw new Error(`Product with id ${id} not found`);
+    }
+    return product;
+  };
+
 export default productSlice.reducer;

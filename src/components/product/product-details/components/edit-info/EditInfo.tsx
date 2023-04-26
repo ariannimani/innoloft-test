@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useFetch } from "hooks/useFetch";
+import { useFetch } from "hooks";
 
 import { convertToCamelCase } from "utils";
 import { MyElement } from "utils/processProductDetails";

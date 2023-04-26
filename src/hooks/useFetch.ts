@@ -27,4 +27,4 @@ const useFetch = <T>(url: string) => {
   return { data, error, isLoading };
 };
 
-export { useFetch };
+export default useFetch;

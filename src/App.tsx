@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes";
 import { Header, Sidebar } from "./components";
-import { useFetch } from "hooks/useFetch";
+import { useFetch } from "hooks";
 
 export interface ConfigData {
   id: number;
